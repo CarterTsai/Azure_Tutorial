@@ -18,7 +18,7 @@ that will download publishsettings file
 $> azure account import {path to .publishsettings file}
 ```
 
-### Restart
+### Restart Server 
 ```
 $> azure site restart [sitename]
 ```
@@ -34,3 +34,19 @@ $> azure site log tail [sitename]
 ```
 $> git push azure master
 ```
+
+### Create iisnode.yml for node.js 
+
+#### Disable all Debug info
+```
+loggingEnabled: false
+devErrorsEnabled: false
+debuggingEnabled: false
+```
+
+### Debug for nodejs on Azure
+Reference: [Debug Node.js applications in Windows Azure Web Sites][1]
+
+http://sitenam/app.js/debug/
+
+[1]: http://tomasz.janczuk.org/2013/07/debug-nodejs-applications-in-windows.html
