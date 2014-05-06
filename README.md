@@ -49,4 +49,15 @@ Reference: [Debug Node.js applications in Windows Azure Web Sites][1]
 
 http://sitenam/app.js/debug/
 
+### Blob
+upload
+```
+ACCOUNT=xxxxxxxxxx
+KEY=xxxxxxxxxxxxx
+CONTAINER=xxxxx
+FILENAME=xxxxxxxx
+
+azure storage blob upload ${CONTAINER} -a ${ACCOUNT} -k ${KEY} -f ${FILENAME}
+```
+
 [1]: http://tomasz.janczuk.org/2013/07/debug-nodejs-applications-in-windows.html
