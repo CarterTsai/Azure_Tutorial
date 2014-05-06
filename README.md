@@ -50,14 +50,41 @@ Reference: [Debug Node.js applications in Windows Azure Web Sites][1]
 http://sitenam/app.js/debug/
 
 ### Blob
-upload
+
+upload a file
+
 ```
 ACCOUNT=xxxxxxxxxx
 KEY=xxxxxxxxxxxxx
 CONTAINER=xxxxx
 FILENAME=xxxxxxxx
 
-azure storage blob upload ${CONTAINER} -a ${ACCOUNT} -k ${KEY} -f ${FILENAME}
+$> azure storage blob upload ${CONTAINER} -a ${ACCOUNT} -k ${KEY} -f ${FILENAME}
+```
+
+bash for updload multi-files
+
+```
+#!/bin/bash
+ACCOUNT=xxxxxxxxxx
+KEY=xxxxxxxxxxxxx
+CONTAINER=xxxxx
+IMAGE_PATH=xxxxx
+
+for D in `find ${IMAGE_PATH} -type f`
+do
+    azure storage blob upload ${CONTAINER} -a ${ACCOUNT} -k ${KEY} -f ${D}
+done
+```
+list 
+
+```
+ACCOUNT=xxxxxxxxxx
+KEY=xxxxxxxxxxxxx
+CONTAINER=xxxxx
+FILENAME=xxxxxxxx
+
+$> azure storage blob list ${CONTAINER} -v -a ${ACCOUNT} -k ${KEY}
 ```
 
 [1]: http://tomasz.janczuk.org/2013/07/debug-nodejs-applications-in-windows.html
