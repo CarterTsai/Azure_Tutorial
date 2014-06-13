@@ -23,10 +23,14 @@ $> azure account import {path to .publishsettings file}
 $> azure site restart [sitename]
 ```
 
-
 ### Get Server Log
 ```
 $> azure site log tail [sitename]
+```
+
+### List Site
+```
+$> azure site list
 ```
 
 ### Deploy
